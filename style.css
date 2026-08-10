@@ -49,6 +49,20 @@ header {
   border-bottom: 1px solid var(--line);
   margin-bottom: 32px;
 }
+header.header-flex {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.avatar {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--card);
+  box-shadow: var(--shadow);
+}
 header h1 {
   font-size: 2.1rem;
   letter-spacing: -.01em;
@@ -161,6 +175,8 @@ footer a { color: var(--muted); border-color: var(--line); }
   .page { padding: 0 18px 36px; }
   header { padding: 36px 0 22px; }
   header h1 { font-size: 1.7rem; }
+  header.header-flex { flex-direction: column; text-align: center; gap: 16px; }
+  .avatar { width: 96px; height: 96px; }
   .plain-list li { flex-direction: column; gap: 2px; }
   .plain-list .yr { min-width: auto; }
   .pub-list li, .grant-list li { padding-left: 28px; }
