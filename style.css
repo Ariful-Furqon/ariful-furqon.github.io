@@ -66,6 +66,9 @@ li:last-child { margin-bottom: 0; }
 }
 .list-toggle:hover { color: var(--ink); }
 
+.link-list li { display: flex; gap: 6px; }
+.link-list .label { min-width: 110px; flex-shrink: 0; }
+
 .plain-list { list-style: none; padding-left: 0; }
 .plain-list li { display: flex; gap: 10px; }
 .plain-list .yr { color: var(--muted); min-width: 84px; flex-shrink: 0; }
