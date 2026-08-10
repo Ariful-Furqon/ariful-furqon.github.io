@@ -163,7 +163,7 @@ li:last-child { margin-bottom: 0; }
 .list-toggle:hover { background: var(--accent); color: #fff; }
 
 .profile-links-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;
   margin-top: 16px;
 }
 .profile-link-card {
@@ -186,6 +186,7 @@ li:last-child { margin-bottom: 0; }
 .badge-rg { background: #00ccbb; }
 .badge-scopus { background: #e9711c; }
 .badge-linkedin { background: #0a66c2; }
+.badge-sinta { background: #c0392b; }
 .profile-link-text { display: flex; flex-direction: column; min-width: 0; }
 .profile-link-text strong { font-size: .92rem; font-weight: 600; }
 .profile-link-url { font-size: .78rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
