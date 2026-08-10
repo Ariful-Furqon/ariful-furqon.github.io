@@ -187,6 +187,9 @@ li:last-child { margin-bottom: 0; }
 .badge-scopus { background: #e9711c; }
 .badge-linkedin { background: #0a66c2; }
 .badge-sinta { background: #c0392b; }
+.badge-github { background: #24292e; }
+.badge-youtube { background: #ff0000; }
+.badge-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 .profile-link-text { display: flex; flex-direction: column; min-width: 0; }
 .profile-link-text strong { font-size: .92rem; font-weight: 600; }
 .profile-link-url { font-size: .78rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
