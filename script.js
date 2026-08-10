@@ -6,6 +6,6 @@ if (pubList && pubToggle) {
   pubToggle.addEventListener('click', () => {
     const collapsed = pubList.classList.toggle('collapsed');
     pubToggle.setAttribute('aria-expanded', String(!collapsed));
-    pubToggle.textContent = collapsed ? 'Tampilkan semua 41 publikasi ▾' : 'Tampilkan lebih sedikit ▴';
+    pubToggle.textContent = collapsed ? 'Tampilkan semua 52 publikasi ▾' : 'Tampilkan lebih sedikit ▴';
   });
 }
