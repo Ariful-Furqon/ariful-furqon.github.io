@@ -137,6 +137,11 @@ li:last-child { margin-bottom: 0; }
 }
 .pub-list .venue { color: var(--muted); font-style: italic; }
 .pub-list .year, .grant-list .year { color: var(--muted); font-variant-numeric: tabular-nums; }
+.pub-list li > a:first-child {
+  font-weight: 600; color: var(--ink); border-bottom: 1px solid transparent;
+}
+.pub-list li > a:first-child:hover { color: var(--link); border-color: var(--link); }
+.pub-list li > a:first-child::after { content: " ↗"; font-weight: 400; color: var(--muted); }
 
 .pub-list.collapsed li:nth-child(n+9) { display: none; }
 .list-toggle {
