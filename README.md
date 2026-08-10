@@ -1,6 +1,6 @@
-# ariful26.github.io
+# ariful2607.github.io
 
-Personal website for GitHub Pages.
+Personal academic website for Muhammad Ariful Furqon — Dosen (Asisten Ahli) Program Studi Informatika, Universitas Jember, dan Kandidat Doktor (PhD) di Japan Advanced Institute of Science and Technology (JAIST).
 
 ## How to publish
 
