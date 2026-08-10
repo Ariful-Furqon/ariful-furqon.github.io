@@ -192,7 +192,7 @@ li:last-child { margin-bottom: 0; }
 
 .plain-list { list-style: none; padding-left: 0; }
 .plain-list li { display: flex; gap: 14px; padding: 5px 0; }
-.plain-list .yr { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; min-width: 96px; flex-shrink: 0; }
+.plain-list .yr { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; min-width: 160px; flex-shrink: 0; }
 
 .tight-text { color: var(--ink); }
 
