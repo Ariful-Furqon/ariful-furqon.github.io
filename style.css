@@ -169,6 +169,7 @@ li:last-child { margin-bottom: 0; }
 
 .profile-links-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  margin-top: 16px;
 }
 .profile-link-card {
   display: flex; align-items: center; gap: 10px;
