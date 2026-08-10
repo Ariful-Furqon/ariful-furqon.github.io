@@ -143,6 +143,14 @@ li:last-child { margin-bottom: 0; }
 .pub-list li > a:first-child:hover { color: var(--link); border-color: var(--link); }
 .pub-list li > a:first-child::after { content: " ↗"; font-weight: 400; color: var(--muted); }
 
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+.teaching-table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.teaching-table th, .teaching-table td { text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+.teaching-table th { background: var(--accent-soft); color: var(--ink); font-weight: 600; font-family: inherit; }
+.teaching-table tbody tr:last-child td { border-bottom: none; }
+.teaching-table tbody tr:hover { background: var(--accent-soft); }
+.teaching-table .col-no { width: 48px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
 .pub-list.collapsed li:nth-child(n+9) { display: none; }
 .list-toggle {
   display: inline-flex; align-items: center; gap: 6px;
