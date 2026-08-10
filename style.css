@@ -15,6 +15,17 @@ body {
   line-height: 1.65;
 }
 .page { max-width: 720px; margin: 0 auto; padding: 64px 24px 40px; }
+
+.lang-toggle { font-size: .82rem; margin-bottom: 24px; }
+.lang-toggle button {
+  background: none; border: none; padding: 0; margin: 0;
+  font: inherit; color: var(--link); cursor: pointer;
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.lang-toggle button:hover { color: var(--ink); }
+.lang-toggle button.active { color: var(--ink); font-weight: 700; text-decoration: none; cursor: default; }
+.lang-toggle .sep { color: var(--line); margin: 0 6px; }
+
 a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
 a:hover { color: var(--ink); }
 h1, h2, h3 { font-weight: 700; line-height: 1.3; }

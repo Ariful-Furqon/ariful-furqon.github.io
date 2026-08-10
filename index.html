@@ -9,13 +9,17 @@
   </head>
   <body>
     <div class="page">
+      <nav class="lang-toggle" aria-label="Language">
+        <button type="button" data-lang="id" class="active">Bahasa Indonesia</button><span class="sep">·</span><button type="button" data-lang="en">English</button><span class="sep">·</span><button type="button" data-lang="ja">日本語</button>
+      </nav>
+
       <header>
         <img class="avatar" src="img/Photograph.jpeg" alt="Foto Muhammad Ariful Furqon" width="96" height="96" />
         <div>
           <h1>Muhammad Ariful Furqon</h1>
           <p class="affil">
-            Asisten Ahli, Program Studi Informatika, <a href="https://unej.ac.id" target="_blank" rel="noreferrer">Universitas Jember</a><br />
-            PhD Candidate, <a href="https://www.jaist.ac.jp/english/" target="_blank" rel="noreferrer">Japan Advanced Institute of Science and Technology</a>
+            <span data-i18n="role_unej">Asisten Ahli, Program Studi Informatika,</span> <a href="https://unej.ac.id" target="_blank" rel="noreferrer">Universitas Jember</a><br />
+            <span data-i18n="role_jaist">Mahasiswa Doktoral (PhD),</span> <a href="https://www.jaist.ac.jp/english/" target="_blank" rel="noreferrer">Japan Advanced Institute of Science and Technology</a>
           </p>
           <p class="links">
             <a href="mailto:ariful.furqon@unej.ac.id">ariful.furqon@unej.ac.id</a><span class="sep">·</span><a href="mailto:ariful.furqon@jaist.ac.jp">ariful.furqon@jaist.ac.jp</a><span class="sep">·</span><a href="https://scholar.google.com/citations?user=IkUbP6sAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a><span class="sep">·</span><a href="https://github.com/ariful2607" target="_blank" rel="noreferrer">GitHub</a>
@@ -26,34 +30,34 @@
       <hr />
 
       <section id="about">
-        <h2>About</h2>
-        <p>Saya dosen tetap (PNS) di Program Studi Informatika, Fakultas Ilmu Komputer, Universitas Jember, dengan jabatan fungsional Asisten Ahli. Riset saya berfokus pada konstruksi dan penerapan knowledge graph, deep learning, dan NLP, sebagian besar diterapkan pada masalah diagnosis hama/penyakit tanaman dan peramalan hasil pertanian. Saat ini saya menempuh pendidikan doktoral di Japan Advanced Institute of Science and Technology (JAIST), Jepang.</p>
+        <h2 data-i18n="h_about">Tentang</h2>
+        <p data-i18n="about_text">Saya dosen tetap (PNS) di Program Studi Informatika, Fakultas Ilmu Komputer, Universitas Jember, dengan jabatan fungsional Asisten Ahli. Riset saya berfokus pada konstruksi dan penerapan knowledge graph, deep learning, dan NLP, sebagian besar diterapkan pada masalah diagnosis hama/penyakit tanaman dan peramalan hasil pertanian. Saat ini saya menempuh pendidikan doktoral di Japan Advanced Institute of Science and Technology (JAIST), Jepang.</p>
       </section>
 
       <section id="research">
-        <h2>Research Interests</h2>
+        <h2 data-i18n="h_research">Minat Riset</h2>
         <p class="tight-text">Knowledge Graphs, Machine Learning, Deep Learning, Natural Language Processing, Graph Neural Networks, Expert Systems, Game Intelligence.</p>
       </section>
 
       <section id="education">
-        <h2>Education</h2>
+        <h2 data-i18n="h_education">Pendidikan</h2>
         <ul class="plain-list">
-          <li><span class="yr">Ongoing</span><span>PhD, Japan Advanced Institute of Science and Technology (JAIST), Ishikawa, Japan</span></li>
+          <li><span class="yr" data-i18n="lbl_ongoing">Sedang berlangsung</span><span>PhD, Japan Advanced Institute of Science and Technology (JAIST), Ishikawa, Japan</span></li>
           <li><span class="yr">2019</span><span>M.Kom., Sistem Informasi, Institut Teknologi Sepuluh Nopember</span></li>
           <li><span class="yr">2016</span><span>S.Pd., Pendidikan Teknik Informatika, Universitas Negeri Malang</span></li>
         </ul>
       </section>
 
       <section id="positions">
-        <h2>Positions</h2>
+        <h2 data-i18n="h_positions">Riwayat Jabatan</h2>
         <ul class="plain-list">
-          <li><span class="yr">2023–now</span><span>Asisten Ahli, Dosen Tetap (PNS), Program Studi Informatika, Universitas Jember </span></li>
-          <li><span class="yr">2021–2022</span><span>Tenaga Pengajar, Dosen Tetap (CPNS), Program Studi Informatika, Universitas Jember</span></li>
+          <li><span class="yr">2023–<span data-i18n="lbl_now">sekarang</span></span><span data-i18n="pos_1">Asisten Ahli, Dosen Tetap (PNS), Program Studi Informatika, Universitas Jember</span></li>
+          <li><span class="yr">2021–2022</span><span data-i18n="pos_2">Tenaga Pengajar, Dosen Tetap (CPNS), Program Studi Informatika, Universitas Jember</span></li>
         </ul>
       </section>
 
       <section id="publications">
-        <h2>Publications</h2>
+        <h2 data-i18n="h_publications">Publikasi</h2>
         <ol class="pub-list collapsed" id="pub-list">
           <li>Perbandingan Seleksi Fitur Sequential, Chi-Square, dan Embedded Pada Klasifikasi Penyakit Kanker Payudara Menggunakan Algoritma Random Forest. <span class="venue">INTEGER: Journal of Information Technology</span>, <span class="year">2026</span>.</li>
           <li>Pengembangan Game Edukasi Vocabulary Untuk Siswa Sekolah Dasar Menggunakan Metode Multimedia Development Life Cycle. <span class="venue">Journal of Animation and Games Studies</span>, <span class="year">2026</span>.</li>
@@ -112,12 +116,12 @@
           <li>Pengembangan Game Edukasi Berbasis Mobile pada Kompetensi Pengalamatan Jaringan untuk Program Keahlian TKJ SMK Negeri 1 Lumajang. <span class="venue">Skripsi, Universitas Negeri Malang</span>, <span class="year">2016</span>.</li>
           <li>Pengembangan Game Edukasi Berbasis Mobile pada Kompetensi Pengalamatan Jaringan untuk SMK Program Keahlian TKJ. <span class="venue">Seminar Nasional Teknologi dan Rekayasa Informasi</span>, <span class="year">2016</span>.</li>
         </ol>
-        <button type="button" class="list-toggle" id="pub-toggle" aria-expanded="false" aria-controls="pub-list">Tampilkan semua 52 publikasi ▾</button>
-        <p class="meta"><a href="https://scholar.google.com/citations?user=IkUbP6sAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a> — h-index 9 · i10-index 7 · 284 sitasi.</p>
+        <button type="button" class="list-toggle" id="pub-toggle" aria-expanded="false" aria-controls="pub-list" data-i18n="pub_toggle_show">Tampilkan semua 52 publikasi ▾</button>
+        <p class="meta"><a href="https://scholar.google.com/citations?user=IkUbP6sAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a> — h-index 9 · i10-index 7 · 284 <span data-i18n="lbl_citations">sitasi</span>.</p>
       </section>
 
       <section id="grants">
-        <h2>Research Grants</h2>
+        <h2 data-i18n="h_grants">Hibah Penelitian</h2>
         <ol class="grant-list">
           <li>The Application of Machine Learning with Graph-Based Models for Agricultural Data Classification. <span class="year">2025</span>.</li>
           <li>Perancangan Model Enterprise Architecture (EA) dalam Pengembangan Sistem Informasi Pangan dan Gizi Terintegrasi untuk Mewujudkan Ketahanan dan Swasembada Pangan di Kabupaten Jember. <span class="year">2025</span>.</li>
@@ -131,7 +135,7 @@
       </section>
 
       <section id="patents">
-        <h2>Intellectual Property</h2>
+        <h2 data-i18n="h_patents">Kekayaan Intelektual</h2>
         <ol class="grant-list">
           <li>Model Prediksi Hasil Panen Padi Menggunakan Agri-GNN di Indonesia. Hak Cipta Nasional, <span class="year">2025</span>.</li>
           <li>Sistem Deteksi Berita Hoaks Berbasis Android Menggunakan Model One Dimensional Convolutional Neural Network (1D-CNN) Berbasis Android. Hak Cipta Nasional, <span class="year">2025</span>.</li>
@@ -146,12 +150,12 @@
       </section>
 
       <section id="teaching">
-        <h2>Teaching</h2>
+        <h2 data-i18n="h_teaching">Pengajaran</h2>
         <p class="tight-text">Kecerdasan Buatan, Pembelajaran Mesin, Deep Learning, Pemrosesan Bahasa Alami, Graf Pengetahuan, Basis Data Graf, Teori Graf, Kecerdasan Komputasional, Sistem Pakar, Struktur Data, Statistika, Analitik dan Visualisasi Data, Strategi Pengembangan Media Pembelajaran, Game Design and Development, Game Intelligence, Game Engine Design &amp; Development, Intelligent Game Theory, Metodologi Penelitian dan Proposal 1, Metodologi Penelitian dan Proposal 2.</p>
       </section>
 
       <section id="other">
-        <h2>Other Information</h2>
+        <h2 data-i18n="h_other">Informasi Lainnya</h2>
         <ol class="plain-list link-list">
           <li><span class="label">Google Scholar</span><span>: <a href="https://scholar.google.com/citations?user=IkUbP6sAAAAJ&hl=en" target="_blank" rel="noreferrer">https://scholar.google.com/citations?user=IkUbP6sAAAAJ&hl=en</a></span></li>
           <li><span class="label">ResearchGate</span><span>: <a href="https://www.researchgate.net/profile/Muhammad-Furqon-2" target="_blank" rel="noreferrer">https://www.researchgate.net/profile/Muhammad-Furqon-2</a></span></li>
@@ -161,8 +165,8 @@
       </section>
 
       <section id="contact">
-        <h2>Contact</h2>
-        <p>Terbuka untuk kolaborasi riset dan bimbingan mahasiswa seputar Knowledge Graph, Machine Learning &amp; NLP.</p>
+        <h2 data-i18n="h_contact">Kontak</h2>
+        <p data-i18n="contact_text">Terbuka untuk kolaborasi riset dan bimbingan mahasiswa seputar Knowledge Graph, Machine Learning &amp; NLP.</p>
         <p><a href="mailto:ariful.furqon@unej.ac.id">ariful.furqon@unej.ac.id</a> · <a href="mailto:ariful.furqon@jaist.ac.jp">ariful.furqon@jaist.ac.jp</a></p>
       </section>
     </div>
