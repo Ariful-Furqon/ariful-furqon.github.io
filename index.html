@@ -34,7 +34,9 @@
           <a href="#teaching" data-i18n="h_teaching">Pengajaran</a>
           <a href="#contact" data-i18n="h_contact">Kontak</a>
         </div>
-        <div id="google_translate_element" class="translate-widget" aria-label="Language"></div>
+        <div class="lang-toggle" aria-label="Language">
+          <button type="button" data-lang="id" class="active">ID</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ja">JA</button>
+        </div>
       </div>
     </nav>
     <div class="page">
@@ -251,14 +253,5 @@
       <div>© <span id="year"></span> Muhammad Ariful Furqon — Universitas Jember · JAIST</div>
     </footer>
     <script src="script.js?v=7"></script>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          { pageLanguage: 'id', includedLanguages: 'en,ja,id', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-          'google_translate_element'
-        );
-      }
-    </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>

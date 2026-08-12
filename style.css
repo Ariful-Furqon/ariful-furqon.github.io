@@ -59,16 +59,15 @@ p:last-child { margin-bottom: 0; }
 }
 .nav-links a:hover { color: var(--link); }
 
-/* Google Translate widget */
-.translate-widget { flex-shrink: 0; }
-#google_translate_element .goog-te-gadget { font: inherit; font-size: .8rem; color: var(--muted); }
-#google_translate_element .goog-te-gadget-simple {
-  background: none; border: 1px solid var(--border, #ddd); border-radius: 999px;
-  padding: 4px 10px; display: inline-flex; align-items: center;
+/* Language toggle */
+.lang-toggle { display: flex; gap: 2px; flex-shrink: 0; }
+.lang-toggle button {
+  background: none; border: none; padding: 5px 9px; margin: 0;
+  font: inherit; font-size: .8rem; color: var(--muted); cursor: pointer; border-radius: 999px;
+  transition: background .15s ease, color .15s ease;
 }
-#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span { color: var(--muted); }
-body > .skiptranslate { display: none; }
-body { top: 0 !important; }
+.lang-toggle button:hover { background: var(--accent-soft); color: var(--link); }
+.lang-toggle button.active { color: #fff; background: var(--accent); font-weight: 600; cursor: default; }
 
 /* Hero header */
 header {
