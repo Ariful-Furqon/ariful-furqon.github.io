@@ -49,6 +49,16 @@ p:last-child { margin-bottom: 0; }
   flex-wrap: wrap;
   min-height: 56px;
 }
+.nav-logo {
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 9px;
+  background: linear-gradient(120deg, var(--hero-from), var(--hero-to));
+  color: #fff; border: none;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 700; font-size: .82rem; letter-spacing: .01em;
+}
+.nav-logo:hover { color: #fff; opacity: .88; }
 .nav-links {
   display: flex; flex-wrap: wrap; gap: 8px 18px;
   flex: 1;
