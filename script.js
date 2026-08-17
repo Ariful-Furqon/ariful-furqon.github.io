@@ -11,7 +11,7 @@ const translations = {
     h_education: 'Pendidikan',
     lbl_ongoing: 'Sedang berlangsung',
     lbl_now: 'sekarang',
-    edu_1: 'PhD, Information Science, Japan Advanced Institute of Science and Technology (JAIST), Jepang',
+    edu_1: 'Ph.D., Information Science, Japan Advanced Institute of Science and Technology (JAIST), Jepang',
     edu_2: 'M.Kom., Sistem Informasi, Institut Teknologi Sepuluh Nopember (ITS), Indonesia',
     edu_3: 'S.Pd., Pendidikan Teknik Informatika, Universitas Negeri Malang (UM), Indonesia',
     h_positions: 'Riwayat Jabatan',
