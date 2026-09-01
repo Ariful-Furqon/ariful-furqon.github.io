@@ -154,3 +154,13 @@ if (pubList && pubToggle) {
     pubToggle.textContent = collapsed ? dict.pub_toggle_show : dict.pub_toggle_hide;
   });
 }
+
+// Dark / light theme toggle (initial value is set inline in <head> to avoid a flash)
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+}
