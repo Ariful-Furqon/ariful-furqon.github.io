@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lens.org">
-  <rect width="64" height="64" rx="12" fill="#0b6e99"/>
-  <circle cx="32" cy="30" r="13" fill="none" stroke="#ffffff" stroke-width="4"/>
-  <line x1="41" y1="39" x2="50" y2="48" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
-</svg>
