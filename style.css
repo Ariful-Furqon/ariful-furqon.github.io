@@ -199,7 +199,7 @@ li:last-child { margin-bottom: 0; }
 .badge-sinta { background: #c0392b; }
 .badge-github { background: #24292e; }
 .badge-youtube { background: #ff0000; }
-.badge-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.badge-orcid { background: #a6ce39; }
 .profile-link-text { display: flex; flex-direction: column; min-width: 0; }
 .profile-link-text strong { font-size: .92rem; font-weight: 600; }
 .profile-link-url { font-size: .78rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
