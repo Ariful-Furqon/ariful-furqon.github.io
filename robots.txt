@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Izinkan perayapan aset agar Google dapat merender halaman sepenuhnya
+Allow: /img/
+Allow: /style.css
+Allow: /script.js
+
 Sitemap: https://ariful-furqon.github.io/sitemap.xml

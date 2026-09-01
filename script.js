@@ -117,6 +117,39 @@ const translations = {
   },
 };
 
+const pageMeta = {
+  id: {
+    title: 'Muhammad Ariful Furqon — Informatika Universitas Jember & JAIST',
+    description:
+      'Muhammad Ariful Furqon — Asisten Ahli Program Studi Informatika, Universitas Jember; kandidat doktor (PhD) di JAIST, Jepang. Riset: Knowledge Graph, Machine Learning, Deep Learning, dan NLP untuk pertanian.',
+  },
+  en: {
+    title: 'Muhammad Ariful Furqon — Informatics, University of Jember & JAIST',
+    description:
+      'Muhammad Ariful Furqon — Assistant Professor of Informatics, University of Jember; PhD candidate at JAIST, Japan. Research on knowledge graphs, machine learning, deep learning, and NLP for agriculture.',
+  },
+  ja: {
+    title: 'Muhammad Ariful Furqon — ジェンベル大学 情報学 / JAIST',
+    description:
+      'Muhammad Ariful Furqon — ジェンベル大学情報学プログラム助教、北陸先端科学技術大学院大学（JAIST）博士後期課程。ナレッジグラフ、機械学習、深層学習、自然言語処理の研究。',
+  },
+};
+
+function applyMeta(lang) {
+  const m = pageMeta[lang] || pageMeta.id;
+  document.title = m.title;
+  const set = (selector, value) => {
+    const el = document.querySelector(selector);
+    if (el) el.setAttribute('content', value);
+  };
+  set('meta[name="description"]', m.description);
+  set('meta[property="og:title"]', m.title);
+  set('meta[property="og:description"]', m.description);
+  set('meta[name="twitter:title"]', m.title);
+  set('meta[name="twitter:description"]', m.description);
+  set('meta[property="og:locale"]', { id: 'id_ID', en: 'en_US', ja: 'ja_JP' }[lang] || 'id_ID');
+}
+
 const pubList = document.getElementById('pub-list');
 const pubToggle = document.getElementById('pub-toggle');
 
@@ -135,6 +168,7 @@ function applyLang(lang) {
   document.querySelectorAll('.lang-toggle button').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
+  applyMeta(lang);
   localStorage.setItem('lang', lang);
 }
 
