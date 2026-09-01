@@ -45,7 +45,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
-.page { max-width: 1140px; margin: 0 auto; padding: 32px 32px 48px; }
+.page { max-width: 1060px; margin: 0 auto; padding: 32px 32px 48px; }
 
 a { color: var(--link); text-decoration: none; border-bottom: 1px solid rgba(15, 110, 110, .32); transition: color .15s ease, border-color .15s ease; }
 a:hover { color: var(--link-hover); border-color: var(--link-hover); }
@@ -67,7 +67,7 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid var(--line);
 }
 .nav-inner {
-  max-width: 1140px; margin: 0 auto; padding: 12px 32px;
+  max-width: 1060px; margin: 0 auto; padding: 12px 32px;
   display: flex; align-items: center; gap: 12px 20px;
   flex-wrap: wrap;
   min-height: 56px;
@@ -83,7 +83,7 @@ p:last-child { margin-bottom: 0; }
 }
 .nav-logo:hover { color: #fff; opacity: .88; }
 .nav-links {
-  display: flex; flex-wrap: wrap; gap: 8px 15px;
+  display: flex; flex-wrap: wrap; gap: 8px 14px;
   flex: 1;
 }
 .nav-links a {
@@ -116,24 +116,34 @@ p:last-child { margin-bottom: 0; }
 
 /* Hero header */
 header {
-  display: flex; align-items: center; gap: 28px;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; gap: 36px;
   background: linear-gradient(120deg, var(--hero-from), var(--hero-to));
   border-radius: 18px;
-  padding: 36px;
+  padding: 44px 48px;
   margin-bottom: 40px;
   box-shadow: var(--shadow);
 }
+header::after {
+  content: ""; position: absolute; pointer-events: none;
+  right: -90px; top: -110px; width: 380px; height: 380px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .11), rgba(255, 255, 255, 0) 70%);
+}
+header > * { position: relative; z-index: 1; }
 .avatar {
-  width: 116px; height: 116px; border-radius: 50%; object-fit: cover;
+  width: 148px; height: 148px; border-radius: 50%; object-fit: cover;
   flex-shrink: 0; border: 4px solid rgba(255, 255, 255, .85);
   box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
 }
-header h1 { font-size: 1.9rem; margin: 0 0 8px; color: #fff; letter-spacing: -.01em; }
-.affil { color: rgba(255, 255, 255, .88); font-size: .98rem; margin-bottom: 12px; }
+header h1 {
+  font-size: clamp(1.9rem, 3vw, 2.45rem);
+  margin: 0 0 10px; color: #fff; letter-spacing: -.015em;
+}
+.affil { color: rgba(255, 255, 255, .88); font-size: 1.02rem; line-height: 1.6; margin-bottom: 16px; }
 .affil a { color: #fff; border-color: rgba(255, 255, 255, .5); }
 .affil a:hover { color: #fff; border-color: #fff; }
-.links { font-size: .9rem; }
-.links a { color: #fff; border: none; background: rgba(255, 255, 255, .16); padding: 4px 11px; border-radius: 999px; margin: 2px 6px 2px 0; display: inline-block; }
+.links { font-size: .92rem; }
+.links a { color: #fff; border: none; background: rgba(255, 255, 255, .16); padding: 6px 14px; border-radius: 999px; margin: 2px 6px 2px 0; display: inline-block; }
 .links a:hover { background: rgba(255, 255, 255, .3); color: #fff; }
 .links span.sep { display: none; }
 
@@ -147,7 +157,7 @@ section h2 {
   padding-left: 14px;
   border-left: 4px solid var(--accent);
 }
-section p { color: var(--ink); max-width: 76ch; }
+section p { color: var(--ink); }
 
 ul, ol { margin: 0; padding-left: 0; list-style: none; }
 li { margin-bottom: 9px; }
@@ -238,7 +248,7 @@ li:last-child { margin-bottom: 0; }
 .tight-text { color: var(--ink); }
 
 footer {
-  max-width: 1140px; margin: 0 auto; padding: 24px 32px 60px;
+  max-width: 1060px; margin: 0 auto; padding: 24px 32px 60px;
   color: var(--muted); font-size: .82rem; text-align: center;
   border-top: 1px solid var(--line); margin-top: 12px;
 }
@@ -252,6 +262,8 @@ footer a { color: var(--muted); }
 
 @media (max-width: 860px) {
   .profile-links-grid { grid-template-columns: repeat(2, 1fr); }
+  header { gap: 28px; padding: 34px 30px; }
+  .avatar { width: 124px; height: 124px; }
 }
 
 @media (max-width: 560px) {
@@ -264,9 +276,9 @@ footer a { color: var(--muted); }
     gap: 6px 14px; font-size: .82rem;
     justify-content: flex-start;
   }
-  header { flex-direction: column; text-align: center; padding: 28px 20px; border-radius: 14px; }
+  header { flex-direction: column; text-align: center; gap: 20px; padding: 28px 20px; border-radius: 14px; }
   header h1 { font-size: 1.55rem; }
-  .avatar { width: 92px; height: 92px; }
+  .avatar { width: 108px; height: 108px; }
   .profile-links-grid { grid-template-columns: 1fr; }
   .links { display: flex; flex-wrap: wrap; justify-content: center; }
   .plain-list li { flex-direction: column; gap: 2px; }

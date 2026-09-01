@@ -20,15 +20,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=13" />
+    <link rel="stylesheet" href="style.css?v=16" />
     <script>
       (function () {
         try {
           var t = localStorage.getItem('theme');
-          if (t !== 'dark' && t !== 'light') {
-            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          }
-          document.documentElement.setAttribute('data-theme', t);
+          document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
         } catch (e) {
           document.documentElement.setAttribute('data-theme', 'light');
         }
@@ -60,7 +57,7 @@
     </nav>
     <div class="page">
       <header>
-        <img class="avatar" src="img/Photograph.jpeg" alt="Foto Muhammad Ariful Furqon" width="96" height="96" />
+        <img class="avatar" src="img/Photograph.jpeg" alt="Foto Muhammad Ariful Furqon" width="148" height="148" />
         <div>
           <h1>Muhammad Ariful Furqon</h1>
           <p class="affil">
