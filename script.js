@@ -2,8 +2,10 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const translations = {
   id: {
-    role_unej: 'Asisten Ahli, Program Studi Informatika,',
-    role_jaist: 'Mahasiswa Doktoral (PhD),',
+    role_unej: 'Asisten Ahli, Program Studi Informatika, ',
+    org_unej: 'Universitas Jember',
+    role_jaist: 'Mahasiswa Doktoral (PhD), ',
+    org_jaist: 'Japan Advanced Institute of Science and Technology',
     h_about: 'Tentang',
     about_text: 'Saya dosen tetap di Program Studi Informatika, Fakultas Ilmu Komputer, Universitas Jember, dengan jabatan fungsional Asisten Ahli. Riset saya berfokus pada konstruksi dan penerapan knowledge graph, deep learning, dan NLP, sebagian besar diterapkan pada masalah diagnosis hama/penyakit tanaman dan peramalan hasil pertanian. Saat ini saya menempuh pendidikan doktoral di Japan Advanced Institute of Science and Technology (JAIST), Jepang.',
     h_research: 'Minat Riset',
@@ -40,8 +42,10 @@ const translations = {
     contact_text: 'Terbuka untuk kolaborasi riset dan bimbingan mahasiswa seputar Knowledge Graph, Machine Learning & NLP.',
   },
   en: {
-    role_unej: 'Assistant Professor, Department of Informatics,',
-    role_jaist: 'PhD Candidate,',
+    role_unej: 'Assistant Professor, Department of Informatics, ',
+    org_unej: 'Universitas Jember',
+    role_jaist: 'PhD Candidate, ',
+    org_jaist: 'Japan Advanced Institute of Science and Technology',
     h_about: 'About',
     about_text: 'I am an assistant professor in the Department of Informatics, Faculty of Computer Science, University of Jember, holding the academic rank of Assistant Professor. My research focuses on the construction and application of knowledge graphs, deep learning, and NLP, mostly applied to plant pest/disease diagnosis and agricultural yield forecasting. I am currently pursuing my PhD at the Japan Advanced Institute of Science and Technology (JAIST), Japan.',
     h_research: 'Research Interests',
@@ -78,8 +82,10 @@ const translations = {
     contact_text: 'Open to research collaboration and student supervision around Knowledge Graphs, Machine Learning & NLP.',
   },
   ja: {
-    role_unej: '助教、情報学科,',
-    role_jaist: '博士課程在学中,',
+    role_unej: '助教、情報学科、',
+    org_unej: 'ジェンベル大学',
+    role_jaist: '博士課程在学中、',
+    org_jaist: '北陸先端科学技術大学院大学（JAIST）',
     h_about: '自己紹介',
     about_text: '私はジェンベル大学計算機科学部情報学科の常勤講師で、職位は助教です。研究分野は知識グラフの構築と応用、深層学習、自然言語処理で、主に植物の病害虫診断や農業収量予測に応用しています。現在、北陸先端科学技術大学院大学(JAIST)で博士課程に在学中です。',
     h_research: '研究分野',

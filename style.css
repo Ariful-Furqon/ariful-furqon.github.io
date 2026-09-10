@@ -139,6 +139,12 @@ header h1 {
   font-size: clamp(1.9rem, 3vw, 2.45rem);
   margin: 0 0 10px; color: #fff; letter-spacing: -.015em;
 }
+.name-ja { display: none; }
+:root[lang="ja"] .name-ja {
+  display: block; margin: -4px 0 10px; color: rgba(255, 255, 255, .72);
+  font-size: .95rem; font-weight: 500; letter-spacing: .06em;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", "Meiryo", sans-serif;
+}
 .affil { color: rgba(255, 255, 255, .88); font-size: 1.02rem; line-height: 1.6; margin-bottom: 16px; }
 .affil a { color: #fff; border-color: rgba(255, 255, 255, .5); }
 .affil a:hover { color: #fff; border-color: #fff; }
@@ -278,6 +284,7 @@ footer a { color: var(--muted); }
   }
   header { flex-direction: column; text-align: center; gap: 20px; padding: 28px 20px; border-radius: 14px; }
   header h1 { font-size: 1.55rem; }
+  :root[lang="ja"] .name-ja { font-size: .85rem; }
   .avatar { width: 108px; height: 108px; }
   .profile-links-grid { grid-template-columns: 1fr; }
   .links { display: flex; flex-wrap: wrap; justify-content: center; }
