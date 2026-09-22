@@ -197,7 +197,10 @@ def build(lang, cfg, source, base, langs):
     return html
 
 
-DATE_MODIFIED = re.compile(r'("dateModified":\s*")(\d{4}-\d{2}-\d{2})(")')
+# Google's structured-data validator rejects a bare date here, so dateModified
+# carries a full ISO 8601 timestamp. The sitemap uses just its date part.
+TIMEZONE = "+07:00"  # WIB, matching the workLocation in the JSON-LD
+DATE_MODIFIED = re.compile(r'("dateModified":\s*")([^"]+)(")')
 
 
 def stamp_date(today):
@@ -206,11 +209,12 @@ def stamp_date(today):
     match = DATE_MODIFIED.search(html)
     if not match:
         sys.exit("build: no dateModified found in index.html")
-    if match.group(2) == today:
-        print("date already %s" % today)
+    stamp = "%sT00:00:00%s" % (today, TIMEZONE)
+    if match.group(2) == stamp:
+        print("date already %s" % stamp)
         return
-    write("index.html", DATE_MODIFIED.sub(lambda m: m.group(1) + today + m.group(3), html, count=1))
-    print("stamped dateModified %s -> %s" % (match.group(2), today))
+    write("index.html", DATE_MODIFIED.sub(lambda m: m.group(1) + stamp + m.group(3), html, count=1))
+    print("stamped dateModified %s -> %s" % (match.group(2), stamp))
 
 
 def build_sitemap(base, langs, lastmod, image):
@@ -267,7 +271,7 @@ def main():
     if not lastmod:
         sys.exit("build: no dateModified found in index.html")
     image = re.search(r'<meta property="og:image" content="([^"]+)"', source).group(1)
-    write("sitemap.xml", build_sitemap(base, langs, lastmod.group(2), image))
+    write("sitemap.xml", build_sitemap(base, langs, lastmod.group(2)[:10], image))
     print("built sitemap.xml")
 
 
