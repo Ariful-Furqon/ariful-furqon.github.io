@@ -14,6 +14,13 @@ if (pubList && pubToggle) {
   });
 }
 
+// "Print / Download CV": the page's print stylesheet *is* the CV layout,
+// so the browser's print dialog (Save as PDF) is all that is needed.
+const cvPrint = document.getElementById('cv-print');
+if (cvPrint) {
+  cvPrint.addEventListener('click', () => window.print());
+}
+
 // Dark / light theme toggle (initial value is set inline in <head> to avoid a flash)
 const themeToggle = document.getElementById('theme-toggle');
 if (themeToggle) {

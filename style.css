@@ -153,6 +153,22 @@ header h1 {
 .links a { color: #fff; border: none; background: rgba(255, 255, 255, .16); padding: 6px 14px; border-radius: 999px; margin: 2px 6px 2px 0; display: inline-block; }
 .links a:hover { background: rgba(255, 255, 255, .3); color: #fff; }
 .links span.sep { display: none; }
+.header-actions { margin: 14px 0 0; }
+.cv-print {
+  font: inherit; font-size: .88rem;
+  display: inline-flex; align-items: center; gap: 7px;
+  color: #fff; background: rgba(255, 255, 255, .16);
+  border: 1px solid rgba(255, 255, 255, .38);
+  padding: 7px 16px; border-radius: 999px; cursor: pointer;
+  transition: background .15s ease, border-color .15s ease;
+}
+.cv-print svg {
+  width: 15px; height: 15px; flex-shrink: 0;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.cv-print:hover { background: rgba(255, 255, 255, .3); border-color: #fff; }
+.print-url { display: none; }
 
 /* Sections */
 section { margin-bottom: 40px; }
@@ -292,4 +308,101 @@ footer a { color: var(--muted); }
   .plain-list li { flex-direction: column; gap: 2px; }
   .plain-list .yr { min-width: auto; }
   .pub-list li, .grant-list li { padding-left: 34px; }
+}
+
+/* ---------------------------------------------------------------------------
+   Print / "Save as PDF": the page doubles as the CV, so no separate PDF file
+   has to be kept in sync. Colors are forced back to the light palette because
+   the dark theme is unreadable on paper.
+   --------------------------------------------------------------------------- */
+@media print {
+  @page { margin: 14mm 13mm 16mm; }
+
+  :root, :root[data-theme="dark"] {
+    --ink: #111111;
+    --muted: #444444;
+    --line: #bbbbbb;
+    --link: #111111;
+    --accent: #111111;
+    --accent-soft: transparent;
+    --paper: #ffffff;
+    --shadow: none;
+    color-scheme: light;
+  }
+  html { scroll-behavior: auto; }
+  body { font-size: 10.5pt; line-height: 1.45; background: #fff; color: #111; }
+  .page, footer { max-width: none; margin: 0; padding: 0; }
+
+  /* Interactive chrome has no meaning on paper. */
+  .site-nav, .theme-toggle, .lang-toggle, .list-toggle, .header-actions,
+  .profile-link-card .badge, header::after { display: none !important; }
+
+  /* Flatten the hero into a plain CV masthead. */
+  header {
+    display: flex; gap: 18px; align-items: flex-start;
+    background: none; box-shadow: none; border-radius: 0;
+    padding: 0 0 12px; margin-bottom: 18px;
+    border-bottom: 1.5pt solid #111;
+  }
+  .avatar {
+    width: 26mm; height: 26mm; border: none; box-shadow: none;
+  }
+  header h1 { color: #111; font-size: 20pt; margin-bottom: 4px; }
+  :root[lang="ja"] .name-ja { color: #444; margin: 0 0 6px; }
+  .affil { color: #111; font-size: 10.5pt; margin-bottom: 6px; }
+  .affil a, .links a, a { color: #111; border: none; background: none; }
+  .links { font-size: 10pt; }
+  .links a { padding: 0; margin: 0; }
+  .links span.sep { display: inline; margin: 0 6px; color: #444; }
+
+  section { margin-bottom: 16px; }
+  section h2 {
+    font-size: 12pt; margin-bottom: 8px;
+    padding-left: 0; border-left: none;
+    border-bottom: .75pt solid #111; padding-bottom: 3px;
+    break-after: avoid; page-break-after: avoid;
+  }
+
+  /* Numbered entries become plain "n." markers — no filled circles to print. */
+  .pub-list li, .grant-list li {
+    padding: 2px 0 2px 26px; border-radius: 0; break-inside: avoid; page-break-inside: avoid;
+  }
+  .pub-list li::before, .grant-list li::before {
+    content: counter(item) ".";
+    background: none; color: #111; font-weight: 600;
+    width: 22px; height: auto; top: 2px;
+    display: block; text-align: right;
+  }
+  .pub-list li:hover, .grant-list li:hover, .teaching-table tbody tr:hover { background: none; }
+  .pub-list li > a:first-child::after { content: none; }
+
+  /* The publication list is collapsed on screen; a CV needs all of it. */
+  .pub-list.collapsed li:nth-child(n+9) { display: list-item; }
+
+  .plain-list li { padding: 2px 0; break-inside: avoid; page-break-inside: avoid; }
+  .plain-list .yr { color: #111; min-width: 130px; }
+
+  .table-wrap { border: none; border-radius: 0; overflow: visible; }
+  .teaching-table { font-size: 10pt; }
+  .teaching-table th { background: none; border-bottom: .75pt solid #111; }
+  .teaching-table th, .teaching-table td { padding: 3px 10px 3px 0; }
+
+  /* Profile links: keep the destination readable, drop the card styling. */
+  .profile-links-grid {
+    display: block; margin-top: 8px; columns: 2; column-gap: 24px;
+  }
+  .profile-link-card {
+    display: block; border: none; border-radius: 0; padding: 1px 0;
+    box-shadow: none; transform: none; break-inside: avoid;
+  }
+  .profile-link-text { display: block; }
+  .profile-link-text strong { font-size: 10pt; }
+  .profile-link-text strong::after { content: ": "; font-weight: 400; }
+  .profile-link-url { display: inline; white-space: normal; color: #444; font-size: 10pt; }
+
+  footer {
+    border-top: .75pt solid #bbb; margin-top: 16px; padding-top: 8px;
+    font-size: 8.5pt; color: #444; text-align: left;
+  }
+  .print-url { display: block; }
 }

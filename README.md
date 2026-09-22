@@ -21,3 +21,12 @@ python tools/build.py
 
 Generator akan berhenti dengan pesan error jika ada key yang belum diterjemahkan,
 atau jika markup yang diharapkan di `index.html` tidak ditemukan.
+
+## CV
+
+Tidak ada berkas `cv.pdf` terpisah: halaman ini **adalah** CV-nya. Tombol
+"Cetak / Unduh CV" di header memanggil dialog cetak browser (pilih *Save as PDF*),
+dan blok `@media print` di `style.css` mengatur tata letaknya — daftar publikasi
+dibuka penuh, navigasi/tombol disembunyikan, dan warna dipaksa kembali ke
+palet terang agar terbaca di kertas. Jadi CV tidak pernah basi: cukup perbarui
+halaman, CV ikut terbarui.

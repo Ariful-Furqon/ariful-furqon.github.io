@@ -163,6 +163,10 @@ def build(lang, cfg, source, base, langs):
                                                                esc(meta["pub_toggle_show"])),
                         "publication toggle")
 
+    # The printed CV footer carries this page's own address.
+    html = replace_once(html, '<div class="print-url">%s</div>' % src_url,
+                        '<div class="print-url">%s</div>' % page_url, "print URL")
+
     # Mark the active language in the switcher.
     html = replace_once(html, '<a href="/%s" data-lang="%s" hreflang="%s" lang="%s" class="active">'
                         % (src["path"], SOURCE_LANG, SOURCE_LANG, SOURCE_LANG),
