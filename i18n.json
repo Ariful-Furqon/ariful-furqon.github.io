@@ -14,7 +14,10 @@
         "og_image_alt": "Foto Muhammad Ariful Furqon",
         "theme_label": "Ganti tema gelap/terang",
         "pub_toggle_show": "Tampilkan semua 60 publikasi ▾",
-        "pub_toggle_hide": "Tampilkan lebih sedikit ▴"
+        "pub_toggle_hide": "Tampilkan lebih sedikit ▴",
+        "nav_label": "Utama",
+        "language_label": "Bahasa",
+        "cv_label": "Cetak / Unduh CV (PDF)"
       },
       "jsonld": {
         "job_title": "Asisten Ahli, Program Studi Informatika",
@@ -59,7 +62,8 @@
         "course_10": "Metodologi Penelitian dan Proposal 2",
         "h_contact": "Kontak",
         "contact_text": "Terbuka untuk kolaborasi riset dan bimbingan mahasiswa seputar Knowledge Graph, Machine Learning & NLP.",
-        "cv_print": "Cetak / Unduh CV"
+        "cv_print": "CV",
+        "skip_link": "Lewati ke konten utama"
       }
     },
     "en": {
@@ -74,7 +78,10 @@
         "og_image_alt": "Photo of Muhammad Ariful Furqon",
         "theme_label": "Toggle dark/light theme",
         "pub_toggle_show": "Show all 60 publications ▾",
-        "pub_toggle_hide": "Show fewer ▴"
+        "pub_toggle_hide": "Show fewer ▴",
+        "nav_label": "Main",
+        "language_label": "Language",
+        "cv_label": "Print / Download CV (PDF)"
       },
       "jsonld": {
         "job_title": "Assistant Professor, Department of Informatics",
@@ -119,7 +126,8 @@
         "course_10": "Research Methodology and Proposal 2",
         "h_contact": "Contact",
         "contact_text": "Open to research collaboration and student supervision around Knowledge Graphs, Machine Learning & NLP.",
-        "cv_print": "Print / Download CV"
+        "cv_print": "CV",
+        "skip_link": "Skip to main content"
       }
     },
     "ja": {
@@ -134,7 +142,10 @@
         "og_image_alt": "Muhammad Ariful Furqon の写真",
         "theme_label": "ダークモードとライトモードの切替",
         "pub_toggle_show": "全60件の論文を表示 ▾",
-        "pub_toggle_hide": "表示を減らす ▴"
+        "pub_toggle_hide": "表示を減らす ▴",
+        "nav_label": "メイン",
+        "language_label": "言語",
+        "cv_label": "CV を印刷・保存（PDF）"
       },
       "jsonld": {
         "job_title": "助教、情報学科",
@@ -179,7 +190,8 @@
         "course_10": "研究方法論と提案 2",
         "h_contact": "連絡先",
         "contact_text": "知識グラフ、機械学習、自然言語処理に関する共同研究や学生指導を歓迎します。",
-        "cv_print": "CV を印刷・保存"
+        "cv_print": "CV",
+        "skip_link": "本文へスキップ"
       }
     }
   }

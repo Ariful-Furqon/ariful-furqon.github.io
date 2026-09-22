@@ -24,9 +24,13 @@ if (cvPrint) {
 // Dark / light theme toggle (initial value is set inline in <head> to avoid a flash)
 const themeToggle = document.getElementById('theme-toggle');
 if (themeToggle) {
+  const isDark = () => document.documentElement.getAttribute('data-theme') === 'dark';
+  // The theme itself is applied in <head>; sync the button's pressed state here.
+  themeToggle.setAttribute('aria-pressed', String(isDark()));
   themeToggle.addEventListener('click', () => {
-    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    const next = isDark() ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
+    themeToggle.setAttribute('aria-pressed', String(next === 'dark'));
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
 }

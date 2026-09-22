@@ -150,10 +150,10 @@ def build(lang, cfg, source, base, langs):
     # Avatar alt text, theme-toggle label, publication toggle labels.
     html = replace_once(html, 'alt="%s"' % esc(src_meta["image_alt"]),
                         'alt="%s"' % esc(meta["image_alt"]), "avatar alt text")
-    html = replace_once(html,
-                        'aria-label="%s" title="%s"' % (esc(src_meta["theme_label"]), esc(src_meta["theme_label"])),
-                        'aria-label="%s" title="%s"' % (esc(meta["theme_label"]), esc(meta["theme_label"])),
-                        "theme toggle label")
+    for key, what in [("theme_label", "theme toggle label"), ("cv_label", "CV button label")]:
+        html = replace_once(html,
+                            'aria-label="%s" title="%s"' % (esc(src_meta[key]), esc(src_meta[key])),
+                            'aria-label="%s" title="%s"' % (esc(meta[key]), esc(meta[key])), what)
     html = replace_once(html,
                         'data-show="%s" data-hide="%s">%s<' % (esc(src_meta["pub_toggle_show"]),
                                                                esc(src_meta["pub_toggle_hide"]),
@@ -167,15 +167,20 @@ def build(lang, cfg, source, base, langs):
     html = replace_once(html, '<div class="print-url">%s</div>' % src_url,
                         '<div class="print-url">%s</div>' % page_url, "print URL")
 
+    # Landmark labels that screen readers read out.
+    html = replace_once(html, '<nav class="site-nav" aria-label="%s">' % esc(src_meta["nav_label"]),
+                        '<nav class="site-nav" aria-label="%s">' % esc(meta["nav_label"]), "nav label")
+    html = replace_once(html, '<div class="lang-toggle" role="group" aria-label="%s">' % esc(src_meta["language_label"]),
+                        '<div class="lang-toggle" role="group" aria-label="%s">' % esc(meta["language_label"]),
+                        "language switcher label")
+
     # Mark the active language in the switcher.
-    html = replace_once(html, '<a href="/%s" data-lang="%s" hreflang="%s" lang="%s" class="active">'
-                        % (src["path"], SOURCE_LANG, SOURCE_LANG, SOURCE_LANG),
-                        '<a href="/%s" data-lang="%s" hreflang="%s" lang="%s">'
-                        % (src["path"], SOURCE_LANG, SOURCE_LANG, SOURCE_LANG), "active ID link")
-    html = replace_once(html, '<a href="/%s" data-lang="%s" hreflang="%s" lang="%s">'
-                        % (cfg["path"], lang, lang, lang),
-                        '<a href="/%s" data-lang="%s" hreflang="%s" lang="%s" class="active">'
-                        % (cfg["path"], lang, lang, lang), "%s language link" % lang)
+    link = '<a href="/%s" data-lang="%s" hreflang="%s" lang="%s"'
+    active = ' class="active" aria-current="page">'
+    html = replace_once(html, (link % (src["path"], SOURCE_LANG, SOURCE_LANG, SOURCE_LANG)) + active,
+                        (link % (src["path"], SOURCE_LANG, SOURCE_LANG, SOURCE_LANG)) + ">", "active ID link")
+    html = replace_once(html, (link % (cfg["path"], lang, lang, lang)) + ">",
+                        (link % (cfg["path"], lang, lang, lang)) + active, "%s language link" % lang)
 
     # These pages live one directory down, so root-relative asset paths.
     for old, new in [('href="style.css', 'href="/style.css'),
