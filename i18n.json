@@ -17,7 +17,8 @@
         "pub_toggle_hide": "Tampilkan lebih sedikit ▴",
         "nav_label": "Utama",
         "language_label": "Bahasa",
-        "cv_label": "Cetak / Unduh CV (PDF)"
+        "cv_label": "Cetak / Unduh CV (PDF)",
+        "sitemap_caption": "Muhammad Ariful Furqon — dosen Informatika Universitas Jember, kandidat doktor di JAIST"
       },
       "jsonld": {
         "job_title": "Asisten Ahli, Program Studi Informatika",
@@ -81,7 +82,8 @@
         "pub_toggle_hide": "Show fewer ▴",
         "nav_label": "Main",
         "language_label": "Language",
-        "cv_label": "Print / Download CV (PDF)"
+        "cv_label": "Print / Download CV (PDF)",
+        "sitemap_caption": "Muhammad Ariful Furqon — informatics lecturer at the University of Jember, PhD candidate at JAIST"
       },
       "jsonld": {
         "job_title": "Assistant Professor, Department of Informatics",
@@ -145,7 +147,8 @@
         "pub_toggle_hide": "表示を減らす ▴",
         "nav_label": "メイン",
         "language_label": "言語",
-        "cv_label": "CV を印刷・保存（PDF）"
+        "cv_label": "CV を印刷・保存（PDF）",
+        "sitemap_caption": "Muhammad Ariful Furqon — ジェンベル大学情報学科助教、JAIST博士課程在学中"
       },
       "jsonld": {
         "job_title": "助教、情報学科",

@@ -1,0 +1,32 @@
+name: Check generated files
+
+# en/index.html, ja/index.html and sitemap.xml are generated from index.html and
+# i18n.json. This fails the build if someone edits the source and forgets to run
+# the generator, which would silently leave the English/Japanese pages stale.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Regenerate
+        run: python tools/build.py
+
+      - name: Fail if the committed output is stale
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::Generated files are out of date. Run 'python tools/build.py' and commit the result."
+            git diff --stat
+            git diff
+            exit 1
+          fi
+          echo "Generated files are up to date."

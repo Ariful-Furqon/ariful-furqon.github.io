@@ -1,0 +1,16 @@
+{
+  "name": "Muhammad Ariful Furqon",
+  "short_name": "M. A. Furqon",
+  "description": "Dosen Informatika Universitas Jember dan kandidat doktor di JAIST. Riset knowledge graph, machine learning, dan NLP.",
+  "lang": "id",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "theme_color": "#0f6e6e",
+  "background_color": "#ffffff",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/img/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

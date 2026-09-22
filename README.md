@@ -16,11 +16,20 @@ Personal academic website for Muhammad Ariful Furqon — Dosen (Asisten Ahli) Pr
 3. Jalankan generator, lalu commit ketiga halaman sekaligus:
 
 ```sh
-python tools/build.py
+python tools/build.py               # bangun ulang en/, ja/, dan sitemap.xml
+python tools/build.py --stamp-date  # sama, plus set tanggal hari ini
 ```
 
 Generator akan berhenti dengan pesan error jika ada key yang belum diterjemahkan,
 atau jika markup yang diharapkan di `index.html` tidak ditemukan.
+
+`sitemap.xml` ikut digenerate, jadi jangan diedit manual. Tanggalnya diambil dari
+`dateModified` pada JSON-LD di `index.html` — itu satu-satunya tempat tanggal
+disimpan; `--stamp-date` memperbaruinya ke hari ini.
+
+GitHub Action `.github/workflows/check-generated.yml` menjalankan generator pada
+tiap push dan gagal kalau hasilnya berbeda dari yang di-commit — pengaman supaya
+halaman EN/JA tidak diam-diam tertinggal.
 
 ## CV
 

@@ -11,6 +11,8 @@ Run after any edit to index.html or i18n.json:
     python tools/build.py
 """
 
+import argparse
+import datetime
 import io
 import json
 import os
@@ -195,7 +197,60 @@ def build(lang, cfg, source, base, langs):
     return html
 
 
+DATE_MODIFIED = re.compile(r'("dateModified":\s*")(\d{4}-\d{2}-\d{2})(")')
+
+
+def stamp_date(today):
+    """Set index.html's JSON-LD dateModified to today. Everything else follows it."""
+    html = read("index.html")
+    match = DATE_MODIFIED.search(html)
+    if not match:
+        sys.exit("build: no dateModified found in index.html")
+    if match.group(2) == today:
+        print("date already %s" % today)
+        return
+    write("index.html", DATE_MODIFIED.sub(lambda m: m.group(1) + today + m.group(3), html, count=1))
+    print("stamped dateModified %s -> %s" % (match.group(2), today))
+
+
+def build_sitemap(base, langs, lastmod, image):
+    """One <url> per language, each listing all three as alternates."""
+    alternates = "".join(
+        '    <xhtml:link rel="alternate" hreflang="%s" href="%s%s" />\n' % (code, base, c["path"])
+        for code, c in langs.items())
+    alternates += '    <xhtml:link rel="alternate" hreflang="x-default" href="%s%s" />\n' % (
+        base, langs[SOURCE_LANG]["path"])
+
+    out = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'
+           ' xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
+           ' xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    for code, cfg in langs.items():
+        out.append("  <url>")
+        out.append("    <loc>%s%s</loc>" % (base, cfg["path"]))
+        out.append(alternates.rstrip("\n"))
+        out.append("    <lastmod>%s</lastmod>" % lastmod)
+        out.append("    <changefreq>monthly</changefreq>")
+        out.append("    <priority>%s</priority>" % ("1.0" if code == SOURCE_LANG else "0.9"))
+        out.append("    <image:image>")
+        out.append("      <image:loc>%s</image:loc>" % image)
+        out.append("      <image:title>Muhammad Ariful Furqon</image:title>")
+        out.append("      <image:caption>%s</image:caption>" % esc(cfg["meta"]["sitemap_caption"]))
+        out.append("    </image:image>")
+        out.append("  </url>")
+    out.append("</urlset>")
+    return "\n".join(out) + "\n"
+
+
 def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--stamp-date", action="store_true",
+                    help="set dateModified/lastmod to today before building")
+    args = ap.parse_args()
+
+    if args.stamp_date:
+        stamp_date(datetime.date.today().isoformat())
+
     config = json.loads(read("i18n.json"))
     base, langs = config["base"], config["languages"]
     source = read("index.html")
@@ -206,6 +261,14 @@ def main():
         out = os.path.join(cfg["path"], "index.html").replace("\\", "/")
         write(out, build(lang, cfg, source, base, langs))
         print("built %s" % out)
+
+    # index.html's dateModified is the single source of truth for the sitemap.
+    lastmod = DATE_MODIFIED.search(source)
+    if not lastmod:
+        sys.exit("build: no dateModified found in index.html")
+    image = re.search(r'<meta property="og:image" content="([^"]+)"', source).group(1)
+    write("sitemap.xml", build_sitemap(base, langs, lastmod.group(2), image))
+    print("built sitemap.xml")
 
 
 if __name__ == "__main__":

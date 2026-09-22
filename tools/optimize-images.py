@@ -29,8 +29,9 @@ except ImportError:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMG = os.path.join(ROOT, "img")
 BADGE_MAX = 72
-# Not badges: the avatar sources and the social-preview image.
-SKIP = {"Photograph.jpeg", "avatar.jpg", "avatar.webp"}
+# Not badges: the avatar sources, the social-preview image and the app icons.
+SKIP = {"Photograph.jpeg", "avatar.jpg", "avatar.webp",
+        "apple-touch-icon.png", "icon-192.png", "icon-512.png", "icon-maskable-512.png"}
 
 
 def save_png(im, path):
