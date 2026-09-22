@@ -146,6 +146,8 @@ header::after {
   background: radial-gradient(circle, rgba(255, 255, 255, .11), rgba(255, 255, 255, 0) 70%);
 }
 header > * { position: relative; z-index: 1; }
+/* <picture> must not become the flex item; the <img> inside it should be. */
+header picture { display: contents; }
 .avatar {
   width: 148px; height: 148px; border-radius: 50%; object-fit: cover;
   flex-shrink: 0; border: 4px solid rgba(255, 255, 255, .85);

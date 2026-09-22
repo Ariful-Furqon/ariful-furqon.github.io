@@ -186,7 +186,8 @@ def build(lang, cfg, source, base, langs):
     for old, new in [('href="style.css', 'href="/style.css'),
                      ('src="script.js', 'src="/script.js'),
                      ('href="img/', 'href="/img/'),
-                     ('src="img/', 'src="/img/')]:
+                     ('src="img/', 'src="/img/'),
+                     ('srcset="img/', 'srcset="/img/')]:
         html = html.replace(old, new)
     html = replace_once(html, '<a class="nav-logo" href="/"', '<a class="nav-logo" href="/%s"' % cfg["path"],
                         "nav logo link")

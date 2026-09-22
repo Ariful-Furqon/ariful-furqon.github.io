@@ -30,3 +30,16 @@ dan blok `@media print` di `style.css` mengatur tata letaknya — daftar publika
 dibuka penuh, navigasi/tombol disembunyikan, dan warna dipaksa kembali ke
 palet terang agar terbaca di kertas. Jadi CV tidak pernah basi: cukup perbarui
 halaman, CV ikut terbarui.
+
+## Gambar
+
+- Badge tautan profil di `img/` dipakai pada ukuran 36x36 px, jadi sisi
+  terpanjangnya dibatasi 72 px (cukup untuk layar 2x). Setelah menambah logo
+  baru, jalankan `python tools/optimize-images.py --write`.
+- Avatar hero dilayani lewat `<picture>`: `img/avatar.webp` dengan
+  `img/avatar.jpg` sebagai cadangan, keduanya 296 px (2x dari 148 px).
+  Pemotongan lingkaran dikerjakan CSS (`object-fit: cover`), jadi rasio aslinya
+  dibiarkan utuh.
+- `img/Photograph.jpeg` ukuran penuh sengaja dipertahankan: berkas itu dipakai
+  sebagai `og:image`/`twitter:image` dan tidak pernah diunduh pengunjung biasa.
+  Kalau fotonya diganti, perbarui berkas ini **dan** buat ulang kedua avatar.
