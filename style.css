@@ -94,13 +94,14 @@ p:last-child { margin-bottom: 0; }
 
 /* Language toggle */
 .lang-toggle { display: flex; gap: 2px; flex-shrink: 0; }
-.lang-toggle button {
+.lang-toggle a {
   background: none; border: none; padding: 5px 9px; margin: 0;
   font: inherit; font-size: .8rem; color: var(--muted); cursor: pointer; border-radius: 999px;
+  text-decoration: none;
   transition: background .15s ease, color .15s ease;
 }
-.lang-toggle button:hover { background: var(--accent-soft); color: var(--link); }
-.lang-toggle button.active { color: var(--on-accent); background: var(--accent); font-weight: 600; cursor: default; }
+.lang-toggle a:hover { background: var(--accent-soft); color: var(--link); border-color: transparent; }
+.lang-toggle a.active { color: var(--on-accent); background: var(--accent); font-weight: 600; cursor: default; }
 .theme-toggle {
   display: inline-flex; align-items: center; justify-content: center;
   width: 32px; height: 32px; padding: 0; margin-left: -8px;

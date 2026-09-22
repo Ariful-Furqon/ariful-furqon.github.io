@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ariful-furqon.github.io/</loc>
-    <lastmod>2026-09-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ariful-furqon.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ariful-furqon.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ariful-furqon.github.io/ja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ariful-furqon.github.io/" />
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://ariful-furqon.github.io/img/Photograph.jpeg</image:loc>
       <image:title>Muhammad Ariful Furqon</image:title>
       <image:caption>Muhammad Ariful Furqon — dosen Informatika Universitas Jember, kandidat doktor di JAIST</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ariful-furqon.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ariful-furqon.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ariful-furqon.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ariful-furqon.github.io/ja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ariful-furqon.github.io/" />
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ariful-furqon.github.io/img/Photograph.jpeg</image:loc>
+      <image:title>Muhammad Ariful Furqon</image:title>
+      <image:caption>Muhammad Ariful Furqon — informatics lecturer at the University of Jember, PhD candidate at JAIST</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ariful-furqon.github.io/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ariful-furqon.github.io/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ariful-furqon.github.io/en/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ariful-furqon.github.io/ja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ariful-furqon.github.io/" />
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://ariful-furqon.github.io/img/Photograph.jpeg</image:loc>
+      <image:title>Muhammad Ariful Furqon</image:title>
+      <image:caption>Muhammad Ariful Furqon — ジェンベル大学情報学科助教、JAIST博士課程在学中</image:caption>
     </image:image>
   </url>
 </urlset>

@@ -12,6 +12,10 @@
     <title>Muhammad Ariful Furqon — Informatika Universitas Jember &amp; JAIST</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f6e6e'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='24' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EMAF%3C/text%3E%3C/svg%3E" />
     <link rel="canonical" href="https://ariful-furqon.github.io/" />
+    <link rel="alternate" hreflang="id" href="https://ariful-furqon.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://ariful-furqon.github.io/en/" />
+    <link rel="alternate" hreflang="ja" href="https://ariful-furqon.github.io/ja/" />
+    <link rel="alternate" hreflang="x-default" href="https://ariful-furqon.github.io/" />
     <link rel="alternate" type="application/xml" title="Sitemap" href="https://ariful-furqon.github.io/sitemap.xml" />
     <link rel="preload" as="image" href="img/Photograph.jpeg" fetchpriority="high" />
     <meta property="og:type" content="profile" />
@@ -38,7 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=21" />
+    <link rel="stylesheet" href="style.css?v=22" />
     <script>
       (function () {
         try {
@@ -1207,8 +1211,8 @@
           <a href="#teaching" data-i18n="h_teaching">Pengajaran</a>
           <a href="#contact" data-i18n="h_contact">Kontak</a>
         </div>
-        <div class="lang-toggle" aria-label="Language">
-          <button type="button" data-lang="id" class="active">ID</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ja">JA</button>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <a href="/" data-lang="id" hreflang="id" lang="id" class="active">ID</a><a href="/en/" data-lang="en" hreflang="en" lang="en">EN</a><a href="/ja/" data-lang="ja" hreflang="ja" lang="ja">JA</a>
         </div>
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Ganti tema gelap/terang" title="Ganti tema gelap/terang">
           <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
@@ -1239,7 +1243,7 @@
 
       <section id="research" aria-labelledby="research-heading">
         <h2 id="research-heading" data-i18n="h_research">Minat Riset</h2>
-        <p class="tight-text" data-i18n="research_text">Knowledge Graphs, Machine Learning, Deep Learning, Natural Language Processing, Graph Neural Networks, Expert Systems, Game Intelligence.</p>
+        <p class="tight-text" data-i18n="research_text">Knowledge Graph, Machine Learning, Deep Learning, Natural Language Processing, Graph Neural Network, Sistem Pakar, Game Intelligence.</p>
       </section>
 
       <section id="education" aria-labelledby="education-heading">
@@ -1323,7 +1327,7 @@
           <li><a href="https://scholar.google.com/scholar?q=Pengembangan%20Game%20Edukasi%20Berbasis%20Mobile%20pada%20Kompetensi%20Pengalamatan%20Jaringan%20untuk%20Program%20Keahlian%20TKJ%20SMK%20Negeri%201%20Lumajang" target="_blank" rel="noreferrer">Pengembangan Game Edukasi Berbasis Mobile pada Kompetensi Pengalamatan Jaringan untuk Program Keahlian TKJ SMK Negeri 1 Lumajang</a>. <span class="venue">Skripsi, Universitas Negeri Malang</span>, <span class="year">2016</span>.</li>
           <li><a href="https://scholar.google.com/scholar?q=Pengembangan%20Game%20Edukasi%20Berbasis%20Mobile%20pada%20Kompetensi%20Pengalamatan%20Jaringan%20untuk%20SMK%20Program%20Keahlian%20TKJ" target="_blank" rel="noreferrer">Pengembangan Game Edukasi Berbasis Mobile pada Kompetensi Pengalamatan Jaringan untuk SMK Program Keahlian TKJ</a>. <span class="venue">Seminar Nasional Teknologi dan Rekayasa Informasi</span>, <span class="year">2016</span>.</li>
         </ol>
-        <button type="button" class="list-toggle" id="pub-toggle" aria-expanded="false" aria-controls="pub-list" data-i18n="pub_toggle_show">Tampilkan semua 60 publikasi ▾</button>
+        <button type="button" class="list-toggle" id="pub-toggle" aria-expanded="false" aria-controls="pub-list" data-show="Tampilkan semua 60 publikasi ▾" data-hide="Tampilkan lebih sedikit ▴">Tampilkan semua 60 publikasi ▾</button>
         <p class="meta"><a href="https://scholar.google.com/citations?user=IkUbP6sAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a> — h-index 8 · i10-index 8 · 285 <span data-i18n="lbl_citations">sitasi</span>.</p>
       </section>
 
@@ -1433,6 +1437,6 @@
     <footer>
       <div>© <span id="year"></span> Muhammad Ariful Furqon — Universitas Jember · JAIST</div>
     </footer>
-    <script src="script.js?v=16"></script>
+    <script src="script.js?v=17"></script>
   </body>
 </html>
